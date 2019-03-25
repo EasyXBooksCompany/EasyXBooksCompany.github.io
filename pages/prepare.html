@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Participant</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .circle {
+            width: 137.8px;
+            height: 137.8px;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #000;
+            line-height: 137.8px;
+            text-align: center;
+            background: #fff
+        }
+        .center-side{
+            background-color: #C5C9B8;
+            width: 100%;
+            height: 660px;
+            color: #333333;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 10px 0;
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+            float: none;
+        }
+    </style>
+</head>
+<body lang="en">
+    <div class="container col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="center-side">
+                    <div>
+                        <div style="width: 137.8px; align-items: center;">
+                            <div class="circle">
+                                <p><span id="my_timer">00:00:00</span></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <button id="record" onclick="startRecord();" type="button" class="btn btn-primary">Record</button>
+                            <button id="stoprecord" onclick="stopRecord();" type="button" class="btn btn-danger">Stop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div style="margin-left: 10px">
+                    <h2 style="text-align: center">Conversation</h2>
+                    <div id="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+</html>
