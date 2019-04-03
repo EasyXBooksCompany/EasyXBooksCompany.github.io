@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<title>Easy-X</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style>
+  .w3-sidebar a {
+    font-family: "MS PGothic", sans-serif
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .w3-wide {
+    font-family: "MS PGothic", sans-serif;
+  }
+
+  .modal-dialog,
+  .modal-content {
+    /* 80% of window height */
+    height: 95%;
+  }
+
+  .modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 120px);
+    overflow-y: scroll;
+  }
+
+  .circle {
+    width: 137.8px;
+    height: 137.8px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #000;
+    line-height: 137.8px;
+    text-align: center;
+    background: #fff
+  }
+
+  .center-side {
+    background-color: #000;
+    width: 100%;
+    height: 450px;
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+  }
+
+  .buttongo {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+  table {
+    display: inline-block;
+    border-collapse: separate;
+    border-spacing: 3px 6px;
+  }
+
+  .wrapper {
+    box-shadow: 0.5px 3px 1px #262626, inset 0.1px 0.10px 1px white;
+    padding: 10px;
+    background: #696969;
+    margin: 0 auto;
+    border-radius: 10px
+  }
+
+  td>a>span {
+    font-size: 12px;
+  }
+
+  td>a {
+    font-size: 15px;
+  }
+
+  td:active {
+    box-shadow: 0.5px 3px 0.2px #262626, inset 0.1px 0.10px 1px white;
+  }
+
+  td {
+    font-size: 20px;
+    color: white;
+    background: #262626;
+    padding: 10px;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0.01px 5px 0.2px #262626, inset 0.1px 0.10px 1px white;
+  }
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .btn-upload {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+</style>
+
+<body style="max-width:100%">
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main">
+    <img src="images/slide.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-black" style="padding:24px 48px; padding-top: 80px;">
+      <h1 class="w3-hide-small"><b>Easy Writer</b></h1>
+      <!--<h5 class="w3-hide-large w3-hide-medium">音声からAI文章生成</h5>-->
+      <h2 class="w3-hide-small"><b>1. 音声を録音</b></h2>
+      <h2 class="w3-hide-small"><b>2. AIが自動文章生成</b></h2>
+      <!--<p><a href="#" class="w3-button w3-black w3-padding-large w3-large" onclick="window.location.href='prepare.html'">録音を開始する</a></p>-->
+      <p><a href="#" class="w3-button  w3-padding-large w3-large"
+          style="background-color: #800000; text-decoration: none; color:#fff" type="button" data-toggle="modal"
+          data-target="#onepop"><b>録音を開始する</b></a></p>
+    </div>
+
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="onepop"
+      aria-labelledby="myExtraLargeModelLabel">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">録音を開始する</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+              onclick="window.location.href='index.html'">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="center-side">
+                    <div>
+                      <div style="width: 137.8px; align-items: center;">
+                        <div class="circle">
+                          <p><span id="my_timer">00:00:00</span></p>
+                        </div>
+                      </div>
+                      <br>
+                      <div>
+                        <button id="record" onclick="startRecord();" type="button" class="btn btn-primary"
+                          style="background-color: darkred; height:60px; width: 60px">開始</button>
+                        <button id="stoprecord" onclick="stopRecord();" type="button" class="btn btn-danger"
+                          style="background-color: darkred;  height:60px; width: 60px;">終了</button>
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <br>
+                        <input type="file" id="fileUpload" hidden="hidden"/>
+                        <button onclick="buttonUploads();" class="btn btn-primary" type="button"
+                          style="background-color:#f4511e;  height:45px; width: 120px; font-size:13px; cursor: pointer">音声ファイルから文章生成</button><br>
+                        <span id="fileName"></span>
+                        <audio id="sound"></audio>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8" style="border: black solid; border-radius: 8px;">
+                  <div style="margin-left: 10px;">
+                    <h2 style="text-align: center">文章生成結果</h2>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <table style="width:100%">
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('、')">、</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('。')">。</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('！')">！</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('？')">？</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('「')">「</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('」')">」</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('（')">（</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('）')">）</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('ー')">ー</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('〜')">〜</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('・')">・</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('/')">/</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('¥')">¥</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('＊')">＊</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('&')">&</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('@')">@</a></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2"> <a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('&nbsp;&nbsp;')">空白</a></td>
+                            <td colspan="2"> <a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('<br>')">改行</a></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col-md-8 col-sm-8">
+                        <!--<div contenteditable="true" style="border: #000 1px;">-->
+                          <!--<p id="result" style="display: inline"></p><p id="interim" style="display: inline"></p>-->
+                        <!--</div>-->
+                        <div style="border: #000 1px;">
+                          <div id="result" contenteditable="true" style="display: inline"></div>
+                          <div id="interim" style="display: inline"></div>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button onclick="exportDoc();" id="exportFile" type="button" class="btn btn-primary">Wordファイルに書き起こし
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+      <div class="w3-row-padding">
+        <div class="w3-col s4">
+          <h4><b>お問合せ</b></h4>
+          <p>サービスへのご意見・ご質問があればお気軽にご質問ください。</p>
+          <form action="mailto:info@books-company.com" method="post" enctype="text/plain">
+            <p><input class="w3-input w3-border" type="text" placeholder="お名前" name="お名前" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="件名" name="件名" required>
+            </p>
+            <p><input class="w3-input w3-border" type="text" placeholder="お問合せ内容" name="お問合せ内容" required>
+            </p>
+            <button type="submit" class="w3-button w3-block w3-black">Send</button>
+          </form>
+        </div>
+
+        <div class="w3-col s4">
+          <h4><b>サービス</b></h4>
+          <p><a href="#">Easy Writerとは</a></p>
+          <p><a href="#" data-toggle="modal"
+                data-target="#onepop">録音を開始する</a></p>
+        </div>
+
+        <div class="w3-col s4 w3-justify">
+          <h4><b>Store</b></h4>
+          <p><i class="fa fa-fw fa-map-marker"></i>株式会社Books&Company
+            〒101-0051
+            東京都千代田区神田神保町２-２
+            神保町二丁目ビル5F
+          </p>
+          <p><i class="fa fa-fw fa-phone"></i>03-6272-3535</p>
+          <p><i class="fa fa-fw fa-envelope"></i> info@books-company.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="w3-black w3-center w3-padding-24">Powered by <a href="http://www.books-company.com/"
+        title="books&company" target="_blank" class="w3-hover-opacity">Books&Company</a></div>
+
+
+
+    <script src="js/main.js"></script>
+    <style type="text/css">
+      .scrollable-wrapper {
+        display: block;
+        max-height: 480px;
+        overflow-y: auto;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
