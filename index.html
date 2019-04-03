@@ -8,364 +8,346 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style>
-    .w3-sidebar a {
-        font-family: "MS PGothic", sans-serif
-    }
+  .w3-sidebar a {
+    font-family: "MS PGothic", sans-serif
+  }
 
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .w3-wide {
-        font-family: "MS PGothic", sans-serif;
-    }
-    .modal-dialog,
-    .modal-content {
-        /* 80% of window height */
-        height: 95%;
-    }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .w3-wide {
+    font-family: "MS PGothic", sans-serif;
+  }
 
-    .modal-body {
-        /* 100% = dialog height, 120px = header + footer */
-        max-height: calc(100% - 120px);
-        overflow-y: scroll;
-    }
-    .circle {
-        width: 137.8px;
-        height: 137.8px;
-        border-radius: 50%;
-        font-size: 30px;
-        color: #000;
-        line-height: 137.8px;
-        text-align: center;
-        background: #fff
-    }
-    .center-side{
-        background-color: #000;
-        width: 100%;
-        height: 450px;
-        color: #333333;
-        margin: 0 auto;
-        overflow: hidden;
-        padding: 10px 0;
-        align-items: center;
-        justify-content: space-around;
-        display: flex;
-        float: none;
-    }
-    .buttongo{
-        border-radius: 4px;
-        background-color: #f4511e;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 28px;
-        padding: 20px;
-        width: 200px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-    }
+  .modal-dialog,
+  .modal-content {
+    /* 80% of window height */
+    height: 95%;
+  }
 
-    .button span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-    }
-    .button span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-    }
+  .modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    max-height: calc(100% - 120px);
+    overflow-y: scroll;
+  }
 
-    .button:hover span {
-        padding-right: 25px;
-    }
+  .circle {
+    width: 137.8px;
+    height: 137.8px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #000;
+    line-height: 137.8px;
+    text-align: center;
+    background: #fff
+  }
 
-    .button:hover span:after {
-        opacity: 1;
-        right: 0;
-    }
+  .center-side {
+    background-color: #000;
+    width: 100%;
+    height: 450px;
+    color: #333333;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    float: none;
+  }
+
+  .buttongo {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+  table {
+    display: inline-block;
+    border-collapse: separate;
+    border-spacing: 3px 6px;
+  }
+
+  .wrapper {
+    box-shadow: 0.5px 3px 1px #262626, inset 0.1px 0.10px 1px white;
+    padding: 10px;
+    background: #696969;
+    margin: 0 auto;
+    border-radius: 10px
+  }
+
+  td>a>span {
+    font-size: 12px;
+  }
+
+  td>a {
+    font-size: 15px;
+  }
+
+  td:active {
+    box-shadow: 0.5px 3px 0.2px #262626, inset 0.1px 0.10px 1px white;
+  }
+
+  td {
+    font-size: 20px;
+    color: white;
+    background: #262626;
+    padding: 10px;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0.01px 5px 0.2px #262626, inset 0.1px 0.10px 1px white;
+  }
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .btn-upload {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
 </style>
 
 <body style="max-width:100%">
 
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-    <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i
-            class="fa fa-bars"></i></a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
-     id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin:25px">
-
-    <!-- Push down content on small screens -->
-    <div class="w3-hide-large" style="margin-top:83px"></div>
-
-    <!-- Top header
-
-</header> -->
-    <!-- Image header -->
-    <div class="w3-display-container w3-container">
-        <img src="images/slide.jpg" alt="Jeans" style="width:100%">
-        <div class="w3-display-topleft w3-text-black" style="padding:24px 48px; padding-top: 80px;">
-            <h1 class="w3-hide-small"><b>音声からAI文章生成</b></h1>
-            <!--<h5 class="w3-hide-large w3-hide-medium">音声からAI文章生成</h5>-->
-            <h2 class="w3-hide-small"><b>「Easy Writer」</b></h2>
-            <!--<p><a href="#" class="w3-button w3-black w3-padding-large w3-large" onclick="window.location.href='prepare.html'">録音を開始する</a></p>-->
-            <p><a href="#" class="w3-button  w3-padding-large w3-large" style="background-color: #800000; text-decoration: none;" type="button"data-toggle="modal" data-target="#myModel"><b>録音を開始する</b></a></p>
-        </div>
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main">
+    <img src="images/slide.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-black" style="padding:24px 48px; padding-top: 80px;">
+      <h1 class="w3-hide-small"><b>Easy Writer</b></h1>
+      <!--<h5 class="w3-hide-large w3-hide-medium">音声からAI文章生成</h5>-->
+      <h2 class="w3-hide-small"><b>1. 音声を録音</b></h2>
+      <h2 class="w3-hide-small"><b>2. AIが自動文章生成</b></h2>
+      <!--<p><a href="#" class="w3-button w3-black w3-padding-large w3-large" onclick="window.location.href='prepare.html'">録音を開始する</a></p>-->
+      <p><a href="#" class="w3-button  w3-padding-large w3-large"
+          style="background-color: #800000; text-decoration: none; color:#fff" type="button" data-toggle="modal"
+          data-target="#onepop"><b>録音を開始する</b></a></p>
     </div>
 
-    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="myModel"  aria-labelledby="myExtraLargeModelLabel">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Start Record</h5>
-                    <button type="button" class="close" data-dismiss="modal"  aria-label="Close" onclick="window.location.href='index.html'">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="center-side">
-                                    <div>
-                                        <div style="width: 137.8px; align-items: center;">
-                                            <div class="circle">
-                                                <p><span id="my_timer">00:00:00</span></p>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div>
-                                            <button id="record" onclick="startRecord();" type="button" class="btn btn-primary" style="background-color: darkred;">開始</button>
-                                            <button id="stoprecord" onclick="stopRecord();" type="button" class="btn btn-danger">終了</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div style="margin-left: 10px;">
-                                    <h2 style="text-align: center">Conversation</h2>
-                                    <div id="result"></div>
-                                </div>
-                            </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="onepop"
+      aria-labelledby="myExtraLargeModelLabel">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">録音を開始する</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+              onclick="window.location.href='index.html'">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="center-side">
+                    <div>
+                      <div style="width: 137.8px; align-items: center;">
+                        <div class="circle">
+                          <p><span id="my_timer">00:00:00</span></p>
                         </div>
+                      </div>
+                      <br>
+                      <div>
+                        <button id="record" onclick="startRecord();" type="button" class="btn btn-primary"
+                          style="background-color: darkred; height:60px; width: 60px">開始</button>
+                        <button id="stoprecord" onclick="stopRecord();" type="button" class="btn btn-danger"
+                          style="background-color: darkred;  height:60px; width: 60px;">終了</button>
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <br>
+                        <input type="file" id="fileUpload" hidden="hidden"/>
+                        <button onclick="buttonUploads();" class="btn btn-primary" type="button"
+                          style="background-color:#f4511e;  height:45px; width: 120px; font-size:13px; cursor: pointer">音声ファイルから文章生成</button><br>
+                        <span id="fileName"></span>
+                        <audio id="sound"></audio>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                    <button onclick="exportDoc();" id="exportFile" type="button" class="btn btn-primary">Wordファイルに取り込む</button>
+                <div class="col-md-8" style="border: black solid; border-radius: 8px;">
+                  <div style="margin-left: 10px;">
+                    <h2 style="text-align: center">文章生成結果</h2>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <table style="width:100%">
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('、')">、</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('。')">。</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('！')">！</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('？')">？</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('「')">「</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('」')">」</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('（')">（</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('）')">）</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('ー')">ー</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('〜')">〜</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('・')">・</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('/')">/</a></td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('¥')">¥</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('＊')">＊</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('&')">&</a></td>
+                            <td><a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('@')">@</a></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2"> <a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('&nbsp;&nbsp;')">空白</a></td>
+                            <td colspan="2"> <a href="#" onclick="document.getElementById('result').focus(); pasteHtmlAtCaret('<br>')">改行</a></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col-md-8 col-sm-8">
+                        <!--<div contenteditable="true" style="border: #000 1px;">-->
+                          <!--<p id="result" style="display: inline"></p><p id="interim" style="display: inline"></p>-->
+                        <!--</div>-->
+                        <div style="border: #000 1px;">
+                          <div id="result" contenteditable="true" style="display: inline"></div>
+                          <div id="interim" style="display: inline"></div>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button onclick="exportDoc();" id="exportFile" type="button" class="btn btn-primary">Wordファイルに書き起こし
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="w3-container w3-text-grey" id="jeans">
-        <br>
-        <h4>最近の履歴</h4>
-    </div>
-
-    <!-- Product grid -->
-    <div class="w3-row w3-grayscale" style="padding-left: 5%">
-        <div class="w3-col l4 s6">
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <p>Conversation_1</p>
-            </div>
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <!--<p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>-->
-                <p>Conversation_2</p>
-            </div>
-        </div>
-
-        <div class="w3-col l4 s6">
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <!--<p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>-->
-                <p>Conversation_3</p>
-            </div>
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <!--<p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>-->
-                <p>Conversation_4</p>
-            </div>
-        </div>
-
-        <div class="w3-col l4 s6">
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <!--<p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>-->
-                <p>Conversation_3</p>
-            </div>
-            <div class="w3-container">
-                <div class="w3-display-container">
-                    <img src="images/album.jpg" style="width:100%">
-                    <div class="w3-display-middle w3-display-hover">
-                        <button class="w3-button w3-black">View now <i class="fa fa-eye"></i></button>
-                    </div>
-                </div>
-                <!--<p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>-->
-                <p>Conversation_4</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subscribe section -->
-    <div class="w3-container w3-black w3-padding-32">
-        <h1>Subscribe</h1>
-        <p>To get special offers and VIP treatment:</p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
-        <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
-    </div>
 
     <!-- Footer -->
     <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
-        <div class="w3-row-padding">
-            <div class="w3-col s4">
-                <h4>Contact</h4>
-                <p>Questions? Go ahead.</p>
-                <form action="/action_page.php" target="_blank">
-                    <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
-                    <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
-                    <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required>
-                    </p>
-                    <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required>
-                    </p>
-                    <button type="submit" class="w3-button w3-block w3-black">Send</button>
-                </form>
-            </div>
-
-            <div class="w3-col s4">
-                <h4>About</h4>
-                <p><a href="#">About us</a></p>
-                <p><a href="#">We're hiring</a></p>
-                <p><a href="#">Support</a></p>
-                <p><a href="#">Find store</a></p>
-                <p><a href="#">Shipment</a></p>
-                <p><a href="#">Payment</a></p>
-                <p><a href="#">Gift card</a></p>
-                <p><a href="#">Return</a></p>
-                <p><a href="#">Help</a></p>
-            </div>
-
-            <div class="w3-col s4 w3-justify">
-                <h4>Store</h4>
-                <p><i class="fa fa-fw fa-map-marker"></i>2-2 101-0051, Chiyoda-ku, Tokyo, 2-2 Kanda-Jimbocho, 2nd Jinbocho 2-chome Building 5F</p>
-                <p><i class="fa fa-fw fa-phone"></i>03-6272-3535</p>
-                <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
-                <h4>We accept</h4>
-                <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
-                <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-                <br>
-                <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-                <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-                <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-                <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-                <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
-            </div>
+      <div class="w3-row-padding">
+        <div class="w3-col s4">
+          <h4><b>お問合せ</b></h4>
+          <p>サービスへのご意見・ご質問があればお気軽にご質問ください。</p>
+          <form action="mailto:info@books-company.com" method="post" enctype="text/plain">
+            <p><input class="w3-input w3-border" type="text" placeholder="お名前" name="お名前" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="件名" name="件名" required>
+            </p>
+            <p><input class="w3-input w3-border" type="text" placeholder="お問合せ内容" name="お問合せ内容" required>
+            </p>
+            <button type="submit" class="w3-button w3-block w3-black">Send</button>
+          </form>
         </div>
+
+        <div class="w3-col s4">
+          <h4><b>サービス</b></h4>
+          <p><a href="#">Easy Writerとは</a></p>
+          <p><a href="#" data-toggle="modal"
+                data-target="#onepop">録音を開始する</a></p>
+        </div>
+
+        <div class="w3-col s4 w3-justify">
+          <h4><b>Store</b></h4>
+          <p><i class="fa fa-fw fa-map-marker"></i>株式会社Books&Company
+            〒101-0051
+            東京都千代田区神田神保町２-２
+            神保町二丁目ビル5F
+          </p>
+          <p><i class="fa fa-fw fa-phone"></i>03-6272-3535</p>
+          <p><i class="fa fa-fw fa-envelope"></i> info@books-company.com</p>
+        </div>
+      </div>
     </footer>
 
     <div class="w3-black w3-center w3-padding-24">Powered by <a href="http://www.books-company.com/"
-                                                                title="books&company" target="_blank" class="w3-hover-opacity">Books&Company</a></div>
-
-    <!-- End page content -->
-</div>
-
-<!-- Newsletter Modal -->
-<div id="newsletter" class="w3-modal">
-    <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
-        <div class="w3-container w3-white w3-center">
-            <i onclick="document.getElementById('newsletter').style.display='none'"
-               class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
-            <h2 class="w3-wide">NEWSLETTER</h2>
-            <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-            <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-            <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom"
-                    onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Accordion
-    function myAccFunc() {
-        var x = document.getElementById("demoAcc");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-
-    // Click on the "Jeans" link on page load to open the accordion for demo purposes
-    document.getElementById("myBtn").click();
+        title="books&company" target="_blank" class="w3-hover-opacity">Books&Company</a></div>
 
 
-    // Open and close sidebar
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-    }
 
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
-</script>
-<script src="js/main.js"></script>
-<style type="text/css">
-    .scrollable-wrapper {
+    <script src="js/main.js"></script>
+    <style type="text/css">
+      .scrollable-wrapper {
         display: block;
         max-height: 480px;
         overflow-y: auto;
         -ms-overflow-style: -ms-autohiding-scrollbar;
-    }
-</style>
+      }
+    </style>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
