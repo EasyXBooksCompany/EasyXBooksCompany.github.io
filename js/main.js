@@ -53,6 +53,7 @@ function startRecord() {
                 transcript.replace("\n","<br>");
                 if(event.results[i].isFinal){
                     finalTranscripts += transcript;
+                    finalTranscripts += '。'+'<br>';
                 }
                 else {
                     interimTranscripts += transcript;
